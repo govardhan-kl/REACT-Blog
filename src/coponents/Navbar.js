@@ -8,6 +8,7 @@ function Navbar() {
           <li><Link to="/">Home</Link> </li>
           <li><Link to="/post/:postid">View Blog</Link> </li>
           <li><Link to="/create-post">Create Blog</Link> </li>
+          {/* <li><a href="/home">Test</a></li> */}
         </ul>
       </div>
     );
