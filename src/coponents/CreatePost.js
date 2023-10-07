@@ -6,6 +6,24 @@ import {useFormInputs} from "./hook";
 //telling to scope a button css file to CreatePost componenet by using CSS MODULES
 import classes from "./Button.module.css";
 
+//styling dynamically
+import styled, {css} from "styled-components";
+
+const StyledButton = styled.button`
+  height: 33px;
+  background: ${(props)=>props.primary ? "blue" : "yellow"};
+  border: 0;
+  color: #fff;
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  ${(props) => props.primary && css`
+    border: 4px solid red;
+  `}
+`;
+
+
 function CreatePost() {
 
   // const [title, setTitle] = useState();
@@ -62,6 +80,8 @@ function CreatePost() {
         {/* <button className="create-post-btn">Create Post</button> */}
         <button className={classes.createPostBtn}>Create Post</button>
       </form>
+      <StyledButton primary>Create Post </StyledButton>
+      <StyledButton>Create Post </StyledButton>
     </div>
   );
 }
