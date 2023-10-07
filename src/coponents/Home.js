@@ -24,15 +24,15 @@ function Home() {
 
   return (
     <div className="home">
-      <h1>Tech Bolgs</h1>
-      <div id="blog-by">Aakash</div>
+      <h1 style={styles.heading}>Tech Blogs</h1>{/* INLINE STYING*/}
+      <div id="blog-by" >Govardhana</div>
 
       {posts.map((post,index)=>(
         <div className="post" key={`post-${index}`}>
           <Link to={`/post/${post.id}`}>
             <h3>{post.title}</h3>
           </Link>
-          <p>{post.subtitle}</p>
+          <p style={{fontStyle:"italic"}}>{post.subtitle}</p>{/* INLINE STYING*/}
         </div>
       ))}
     </div>
@@ -40,4 +40,13 @@ function Home() {
 }
   
 export default Home;
+
+//styles
+// Inline styling, using below in html elemets
+const styles = {
+  heading:{
+    marginTop:30,
+    fontSize:50,
+  },
+}
   

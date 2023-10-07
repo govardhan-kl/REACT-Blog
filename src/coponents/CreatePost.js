@@ -3,6 +3,9 @@ import {db} from '../firebase';
 import { collection, query ,getDocs , doc , onSnapshot, Query , addDoc, updateDoc, deleteDoc, where, orderBy } from "firebase/firestore";
 import {useFormInputs} from "./hook";
 
+//telling to scope a button css file to CreatePost componenet by using CSS MODULES
+import classes from "./Button.module.css";
+
 function CreatePost() {
 
   // const [title, setTitle] = useState();
@@ -56,7 +59,8 @@ function CreatePost() {
           <label>Content</label>
           <textarea {...content}></textarea>
         </div>
-        <button className="create-post-btn">Create Post</button>
+        {/* <button className="create-post-btn">Create Post</button> */}
+        <button className={classes.createPostBtn}>Create Post</button>
       </form>
     </div>
   );
